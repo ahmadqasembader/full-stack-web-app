@@ -1,10 +1,13 @@
-import express from "express";
-
+import express from 'express';
+import bodyParser from 'body-parser'
+import router from './routes/user_routes.js'
+const config = process.env.port || 3000
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("Hello World");
-})
+router.use(bodyParser.urlencoded({extended: true}))
+router.use(express.json())
+
+app.use('/home', router)
 
 app.listen(3000, () => {
     console.log("Server is running")
