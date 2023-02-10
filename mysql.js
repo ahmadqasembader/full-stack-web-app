@@ -1,8 +1,11 @@
-import sequelize from 'sequelize';
+import Sequelize from 'sequelize';
 
+const sequelize = new Sequelize('users', 'root', 'Ahmad9889bader.', 
+    { 
+        host: 'localhost',
+        dialect: 'mysql',
+        operatordesAliases: false
+    })
 
-// Option 3: Passing parameters separately (other dialects)
-const sequelize = new sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+export default sequelize;
+global.sequelize = sequelize;

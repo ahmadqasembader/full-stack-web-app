@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser'
 import router from './routes/user_routes.js'
+import sequelize from './mysql.js'
 const config = process.env.port || 3000
 const app = express();
 
