@@ -5,8 +5,8 @@ import sequelize from './mysql.js'
 const config = process.env.port || 3000
 const app = express();
 
-router.use(bodyParser.urlencoded({extended: true}))
-router.use(express.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
 
 app.use('/home', router)
 

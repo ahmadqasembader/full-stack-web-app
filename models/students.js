@@ -1,9 +1,12 @@
-import Sequelize from "sequelize";
+import Sequelize, { Deferrable, Model } from "sequelize";
+import sequelize from "../mysql.js";
+import acc_course from "./courses.js";
 
-export default Sequelize.define('students', 
+const student = sequelize.define('students', 
 {
     id: {
         type: Sequelize.INTEGER(6), 
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
@@ -13,3 +16,7 @@ export default Sequelize.define('students',
     classes: Sequelize.INTEGER,
     courses: Sequelize.INTEGER 
 })
+
+// student.hasMany(acc_course)
+
+export default student

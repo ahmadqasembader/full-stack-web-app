@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
+import sequelize from "../mysql.js";
+import student from "./students.js";
 
-export default Sequelize.define('courses', {
+const course = sequelize.define('courses', {
     id: {
         type: Sequelize.INTEGER(6), 
         allowNull: false,
@@ -15,3 +17,7 @@ export default Sequelize.define('courses', {
     students: Sequelize.INTEGER,
     courses: Sequelize.INTEGER
 })
+
+
+
+export default course

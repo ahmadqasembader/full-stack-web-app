@@ -11,6 +11,11 @@ const course = new Course("Course Constructor")
 const classes = new Class("Class Constructor")
 
 router.get('/students', (req, res) => {
+    console.log("Hi")
+    console.log(req.body)
+    const {id, name, age} = req.body
+    
+    student.CreateStudent({id, name, age});
     res.send('Student Page')
 })
 
