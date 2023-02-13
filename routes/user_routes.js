@@ -8,7 +8,7 @@ const router = express.Router();
 
 const student = new Student("Student Constructor")
 const course = new Course("Course Constructor")
-const classs = new Class("Class Constructor")
+const classes = new Class("Class Constructor")
 
 router.get('/students', (req, res) => {
     res.send('Student Page')
