@@ -13,8 +13,6 @@ module.exports = {
         type: Sequelize.INTEGER(6)
       },
       name: Sequelize.STRING(100),
-      students: Sequelize.INTEGER,
-      courses: Sequelize.INTEGER,
 
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE 

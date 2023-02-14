@@ -13,6 +13,16 @@ class Student{
         console.log("Creating a new student");
         return student.create(std);
     }
+
+    //view student data
+    getStdInfo(){};
+
+    updateStudent(){};
+    deleteStudent(id){
+        student.destroy({
+            where: {id}
+        })
+    };
 }
 
 export default Student;

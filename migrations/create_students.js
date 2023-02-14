@@ -12,8 +12,6 @@ module.exports = {
 
       name: Sequelize.STRING(100),
       age: Sequelize.INTEGER,
-      classes: Sequelize.INTEGER,
-      courses: Sequelize.INTEGER,
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE 
     })

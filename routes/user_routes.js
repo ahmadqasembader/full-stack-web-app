@@ -1,31 +1,53 @@
-import express from 'express';
+import express      from 'express';
+import Student      from '../controller/students.js'
+import Course       from '../controller/courses.js'
+import Class        from '../controller/classes.js'
+import association  from '../models/associations.js'
 
-import Student from '../controller/students.js'
-import Course from '../controller/courses.js'
-import Class from '../controller/classes.js'
+const student   = new Student("Student Constructor")
+const course    = new Course("Course Constructor")
+const classes   = new Class("Class Constructor")
 
 const router = express.Router();
 
-const student = new Student("Student Constructor")
-const course = new Course("Course Constructor")
-const classes = new Class("Class Constructor")
 
 router.get('/students', (req, res) => {
-    console.log("Hi")
-    console.log(req.body)
+    
+    association();
+    
     const {id, name, age} = req.body
     
     student.CreateStudent({id, name, age});
     res.send('Student Page')
 })
 
-router.get('/courses', (req, res) => {
-    // console.log("Courses")
+router.get('/students/delete', (req, res) => {
+    const {id} = req.body;
+    console.log(id)
+    student.deleteStudent(id);
+    res.send('student deleted successfuly!');
+})
+
+
+router.get('/course/create', (req, res) => {    
+    
+    association();
+    
+    const {id, code, name} = req.body
+
+    course.CreateCourse({id, code ,name});
     res.send('Course Page')
 })
 
+
+router.get('/course/delete', (req, res) => {
+    const {id} = req.body;
+    console.log(id)
+    course.deleteCourse(id);
+    res.send('student deleted successfuly!');
+})
+
 router.get('/classes', (req, res) => {
-    // console.log("Classes")
     res.send('Class Page')
 })
 

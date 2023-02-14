@@ -10,13 +10,11 @@ module.exports = {
         primaryKey: true
       },
       code: {
-        type: Sequelize.INTEGER(6),
+        type: Sequelize.STRING(6),
         allowNull: false,
         primaryKey: true
       },
       name: Sequelize.STRING(100),
-      students: Sequelize.INTEGER,
-      courses: Sequelize.INTEGER,
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     })

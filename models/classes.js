@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
-import sequelize from "../mysql";
-import student from "./students";
+import sequelize from "../mysql.js";
+import student from "./students.js";
 
 const classs = sequelize.define('classes', {
     id: {
@@ -12,8 +12,6 @@ const classs = sequelize.define('classes', {
         type: Sequelize.INTEGER(6)
     },
     name: Sequelize.STRING(100),
-    students: Sequelize.INTEGER,
-    courses: Sequelize.INTEGER
 })
 
 
