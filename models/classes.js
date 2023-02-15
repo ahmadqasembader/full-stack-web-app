@@ -8,11 +8,13 @@ const classs = sequelize.define('classes', {
         allowNull: false,
         primaryKey: true
     },
-    classroomCode: {
+    code: {
         type: Sequelize.INTEGER(6)
     },
     name: Sequelize.STRING(100),
 })
+
+
 
 
 export default classs;

@@ -1,5 +1,6 @@
 import Sequelize, { Deferrable, Model } from "sequelize";
 import sequelize from "../mysql.js";
+import classs from "./classes.js";
 import course from "./courses.js";
 
 const student = sequelize.define('students', 
@@ -14,6 +15,7 @@ const student = sequelize.define('students',
     name: Sequelize.STRING(100),
     age: Sequelize.INTEGER,
 })
+
 
 
 

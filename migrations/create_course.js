@@ -9,11 +9,9 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
-      code: {
-        type: Sequelize.STRING(6),
-        allowNull: false,
-        primaryKey: true
-      },
+      classroomCode: {
+        type: Sequelize.INTEGER(6)
+    },
       name: Sequelize.STRING(100),
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE

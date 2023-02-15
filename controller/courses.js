@@ -8,9 +8,10 @@ class Course{
         console.log("Msg: " + msg);
     }
 
-    CreateCourse(crs){
-        console.log("Creating a new course");
-        return course.create(crs);
+    CreateCourse(req, res){
+        const {id, classroomCode, name} = req.body
+
+        course.create({id, classroomCode, name}).then((data) => res.json(data))
     }
 
     addStudent(){};

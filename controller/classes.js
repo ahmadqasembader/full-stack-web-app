@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import classs from '../models/classes.js';
 dotenv.config();
 const config = process.env
 
@@ -8,7 +9,11 @@ class Class{
     }
 
     //create class
-    createClass(){};
+    createClass(req, res){
+        const {id, code, name} = req.body
+
+        classs.create({id, code, name}).then((data) => res.json(data))
+    };
 
     //add student
     addStudent(){};
@@ -21,7 +26,12 @@ class Class{
     updateClass(){};
     
     //delete class records
-    deleteClass(){};
+    deleteClass(req, res){
+        const {id} = req.body
+        classs.destroy({
+            where: {id}
+        }).then((data) => res.json(data))
+    };
 }
 
 

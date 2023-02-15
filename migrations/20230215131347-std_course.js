@@ -3,20 +3,19 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('classes', {
-      id: {
+    return queryInterface.createTable('std_courses', {
+      std_id: {
         type: Sequelize.INTEGER(6),
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
       },
-      code: {
-        type: Sequelize.INTEGER(6)
-    },
-      name: Sequelize.STRING(100),
+      std_name: Sequelize.STRING,
+      course_id: Sequelize.INTEGER
+  
     })
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('classes')
+
   }
 };
